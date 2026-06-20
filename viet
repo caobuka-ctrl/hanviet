@@ -1,0 +1,66 @@
+npx create-next-app@latest topik-web
+cd topik-web
+npm run dev
+http://localhost:3000
+export default function Home() {
+  return (
+    <main style={{
+      maxWidth: "1000px",
+      margin: "auto",
+      padding: "40px"
+    }}>
+      <h1>TOPIK Learning</h1>
+
+      <p>
+        Học từ vựng và ngữ pháp TOPIK miễn phí.
+      </p>
+
+      <div style={{
+        display:"grid",
+        gridTemplateColumns:"repeat(3,1fr)",
+        gap:"20px"
+      }}>
+        <div>
+          <h2>Từ vựng</h2>
+          <p>5000 từ TOPIK</p>
+        </div>
+
+        <div>
+          <h2>Ngữ pháp</h2>
+          <p>Tổng hợp ngữ pháp TOPIK</p>
+        </div>
+
+        <div>
+          <h2>Đề thi</h2>
+          <p>Luyện thi trực tuyến</p>
+        </div>
+      </div>
+    </main>
+  )
+}
+const words = [
+  {
+    korean:"학교",
+    vietnamese:"Trường học"
+  },
+  {
+    korean:"학생",
+    vietnamese:"Học sinh"
+  }
+]
+
+export default function Vocabulary() {
+  return (
+    <div>
+      <h1>Từ vựng TOPIK</h1>
+
+      {words.map((w,index)=>(
+        <div key={index}>
+          <h3>{w.korean}</h3>
+          <p>{w.vietnamese}</p>
+        </div>
+      ))}
+    </div>
+  )
+}
+end
